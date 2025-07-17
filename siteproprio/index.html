@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Pessoal</title>
+     <link rel="stylesheet" href="style.css">
+    </head>
+
+<body>
+    <div class="particulas"></div>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu_itens">Inicio</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu_itens">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu_itens">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu_itens">Contatos</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+
+        <img src="./img/fotoinicio.png" alt="fotoperfil" class="fotoinicio">
+        <h1>Rachel Pereira</h1>
+        <p class="subtitulo-cabecalho">Desenvolvedora Front End</p>
+    </main>
+
+    <main class="sobremim" id="sobre">
+        <section class="sobre">
+            <div class="sobre-titulo">
+                <h2>Sobre mim</h2>
+            </div>
+            <div class="sobre-caixa">
+                <p class="paragrafo_sobre">Sou apaixonada por tecnologia e pelo desenvolvimento Front-end, área na qual
+                    venho me dedicando intensamente para construir uma base sólida de conhecimentos. Estudo e pratico
+                    continuamente HTML, CSS, JavaScript, React e SQL, aplicando essas habilidades em projetos pessoais
+                    que me permitem transformar ideias em interfaces modernas, responsivas e intuitivas.<br> Minha
+                    curiosidade e vontade de aprender me levaram a desenvolver diversos projetos por conta
+                    própria, onde pude aprimorar tanto o lado técnico quanto o olhar para a experiência do usuário. A
+                    cada novo desafio, busco aprofundar meus conhecimentos e encontrar soluções criativas para problemas
+                    reais. <br> Estou em busca da minha primeira oportunidade profissional na área de desenvolvimento
+                    web, com o
+                    objetivo de aplicar o que venho aprendendo, crescer junto a uma equipe experiente e contribuir com
+                    projetos inovadores. Tenho facilidade para aprender novas tecnologias, sou determinada e motivada a
+                    construir uma carreira sólida no universo da programação.</p>
+
+            </div>
+        </section>
+    </main>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="">
+            <div class="projetos_card">
+                <div class="projetos-caixa">
+                    <img src="./img/projeto1.png" alt="Projeto 1" class="projetos_imagem">
+                    <h4 class="titulo-projeto">Loja de Carros</h4>
+                    <p class="paragrafo-projeto">Loja virtual moderna com animações suave e design reponsivo para uma
+                        loja de carros.</p>
+                </div>
+
+                <div class="projetos-caixa">
+                    <img src="./img/projeto2.png" alt="Projeto 2" class="projetos_imagem">
+                    <h4 class="titulo-projeto">Página de viagens</h4>
+                    <p class="paragrafo-projeto">Uma página interativa com roteiros de viagem mais cobicados do
+                        mundo.</p>
+                </div>
+
+                <div class="projetos-caixa">
+                    <img src="./img/projeto3.png" alt="Projeto 2" class="projetos_imagem">
+                    <h4 class="titulo-projeto">Pontos Turísticos</h4>
+                    <p class="paragrafo-projeto">Página de escolha de pontos turísticos para demonstrar
+                        conhecimentos em diversas tecnologias.</p>
+                </div>
+
+            </div>
+
+
+
+        </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contato-titulo">Entre em contato</h2>
+        <form class="formulario" id="formulario">
+            <div class="campo-form">
+                <input type="text" placeholder="Seu nome" class="campo" id="nome"</div>
+                <div class="campo-form">
+                    <textarea class="campo" placeholder="Digite sua mensagem" id="mensagem" rows="4"></textarea>
+                </div>
+                <div class="botao_formulario" >
+                    <button type="submit" class="botao" onclick="enviarWhats(event)"> Enviar um WhatsApp</button>
+                </div>
+
+        </form>
+
+    </section>
+
+    <footer class="rodape">
+        <div class="rodape_div">
+            &copy; Rachel Pereira
+        </div>
+
+    </footer>
+
+
+    <script>
+        function enviarWhats(event) {
+        event.preventDefault()
+
+        const nome = document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value; //mensagem digitada no site
+        const telefone = '5511985081120'
+
+
+        const texto = `Olá! Me chamo ${nome}, ${mensagem}` //mensagem automatica 
+        const msgFormatada = encodeURIComponent(texto) //formatar o texto para encaminhar 
+
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}` //url para encaminhar ao wpp
+
+        window.open(url, '_blank') //abrir em uma janela nova
+
+    console.log(url)
+}
+    </script>
+</body>
+
+</html>
